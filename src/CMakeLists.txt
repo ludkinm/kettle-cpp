@@ -1,1 +1,1 @@
-add_and_link(test ${PROJECT_NAME})
+add_and_link(test_binary_plus)
