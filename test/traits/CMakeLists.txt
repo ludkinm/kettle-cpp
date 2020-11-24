@@ -1,0 +1,5 @@
+add_and_link_and_test(has_checks_double traits)
+add_and_link_and_test(has_checks_int traits)
+add_and_link_and_test(has_checks_int_ptr traits)
+add_and_link_and_test(has_checks_nullptr traits)
+add_and_link_and_test(has_checks_void traits)

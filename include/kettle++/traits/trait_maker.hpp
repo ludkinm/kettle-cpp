@@ -6,6 +6,7 @@
 namespace ktl {
 // Bring standard types into scope
 using std::enable_if_t;
+using std::is_copy_assignable_v;
 using std::is_copy_constructible_v;
 
 #define MAKE_TRAIT(name, expr)                                                 \
@@ -14,7 +15,7 @@ using std::is_copy_constructible_v;
   template <class T>                                                           \
   struct name<T, std::void_t<decltype(expr)>> : public std::true_type {};      \
                                                                                \
-  template <class T> static constexpr bool name##_v = name<T>::value;
+  template <class T> constexpr static bool name##_v = name<T>::value;
 
 // Assignment
 MAKE_TRAIT(has_assign, std::declval<T &>() += std::declval<T &>())

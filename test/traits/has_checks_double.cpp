@@ -1,4 +1,4 @@
-#include "catch.hpp"
+#include "../catch.hpp"
 #include <kettle++/traits/trait_maker.hpp>
 
 TEST_CASE("double", "[has_checks]") {

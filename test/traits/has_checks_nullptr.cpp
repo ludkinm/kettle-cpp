@@ -1,5 +1,4 @@
-#include "catch.hpp"
-#include "catch2/catch.hpp"
+#include "../catch.hpp"
 #include <kettle++/traits/trait_maker.hpp>
 
 TEST_CASE("std::nullptr_t", "[has_checks]") {

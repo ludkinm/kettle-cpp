@@ -5,14 +5,14 @@
 
 namespace ktl {
 
-template <class, class = void> struct binary_plus {};
-
 /*
- * Implement T &operator+(T const&, T const&)
- * If T provides binary operator+ then add nothing
- * If T provides operator+= then can implement using that
- * If T provides operator-= and unary operator- then implement using those
+ * Implement binary+ using Options:
+ * (1) If T has binary+ use it
+ * (2) If T has += and copy constructor
+ * (3) If T has -= and unary-
  */
+
+template <class, class = void> struct binary_plus {};
 
 template <class T> struct binary_plus<T, enable_if_t<has_binary_plus_v<T>>> {};
 
