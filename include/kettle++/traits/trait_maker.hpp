@@ -1,9 +1,9 @@
-#ifndef __CRTPI_TRAIT_MAKER_GUARD__
-#define __CRTPI_TRAIT_MAKER_GUARD__
+#ifndef __KTL_TRAIT_MAKER_GUARD__
+#define __KTL_TRAIT_MAKER_GUARD__
 
 #include <type_traits>
 
-namespace crtpi {
+namespace ktl {
 // Bring standard types into scope
 using std::enable_if_t;
 using std::is_copy_constructible_v;
@@ -65,5 +65,5 @@ MAKE_TRAIT(has_less_than_equals, std::declval<T>() <= std::declval<T>())
 MAKE_TRAIT(has_more_than, std::declval<T>() > std::declval<T>())
 MAKE_TRAIT(has_more_than_equals, std::declval<T>() >= std::declval<T>())
 
-} // namespace crtpi
+} // namespace ktl
 #endif

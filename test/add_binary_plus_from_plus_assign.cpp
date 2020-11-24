@@ -1,6 +1,6 @@
 #include "catch.hpp"
-#include <crtp_interface/binary_plus.hpp>
-#include <crtp_interface/traits/trait_maker.hpp>
+#include <kettle++/binary_plus.hpp>
+#include <kettle++/traits/trait_maker.hpp>
 
 struct IntImpl {
   int x;
@@ -12,7 +12,7 @@ struct IntImpl {
   }
 };
 
-struct Int : IntImpl, protected crtpi::binary_plus<IntImpl> {
+struct Int : IntImpl, protected ktl::binary_plus<IntImpl> {
   using IntImpl::IntImpl;
 };
 

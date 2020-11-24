@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(CRTPI
+project(KETTLE
   VERSION 0.0.1
   DESCRIPTION "Uses CRTP to reduce boilerplate."
   LANGUAGES CXX)
 
-option(CRTPI_BUILD_TESTS ON)
+option(KETTLE_BUILD_TESTS "ON if tests should be built" ON)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
@@ -26,9 +26,7 @@ add_executable(${FILE} ${FILE}.cpp)
 target_link_libraries(${FILE} ${PROJECT_NAME})
 endfunction()
 
-add_subdirectory(src)
-
-if(CRTPI_BUILD_TESTS)
+if(KETTLE_BUILD_TESTS)
   enable_testing()
   find_package(Catch2 REQUIRED)
   add_subdirectory(test)

@@ -1,9 +1,9 @@
-#ifndef __CRTPI_BINARY_PLUS_GUARD__
-#define __CRTPI_BINARY_PLUS_GUARD__
+#ifndef __KTL_BINARY_PLUS_GUARD__
+#define __KTL_BINARY_PLUS_GUARD__
 
-#include <crtp_interface/traits/trait_maker.hpp>
+#include <kettle++/traits/trait_maker.hpp>
 
-namespace crtpi {
+namespace ktl {
 
 template <class, class = void> struct binary_plus {};
 
@@ -37,5 +37,5 @@ struct binary_plus<T,
   }
 };
 
-} // namespace crtpi
+} // namespace ktl
 #endif
