@@ -7,11 +7,11 @@ TEST_CASE("double", "[has_checks]") {
   REQUIRE(crtpi::has_mult_assign_v<double>);
   REQUIRE(crtpi::has_div_assign_v<double>);
   REQUIRE(!crtpi::has_mod_assign_v<double>);
-  REQUIRE(!crtpi::has_and_assign_v<int>);
-  REQUIRE(!crtpi::has_or_assign_v<int>);
-  REQUIRE(!crtpi::has_xor_assign_v<int>);
-  REQUIRE(!crtpi::has_bit_left_assign_v<int>);
-  REQUIRE(!crtpi::has_bit_right_assign_v<int>);
+  REQUIRE(crtpi::has_and_assign_v<int>);
+  REQUIRE(crtpi::has_or_assign_v<int>);
+  REQUIRE(crtpi::has_xor_assign_v<int>);
+  REQUIRE(crtpi::has_bit_left_assign_v<int>);
+  REQUIRE(crtpi::has_bit_right_assign_v<int>);
   REQUIRE(crtpi::has_pre_inc_v<double>);
   REQUIRE(crtpi::has_pre_dec_v<double>);
   REQUIRE(crtpi::has_post_inc_v<double>);

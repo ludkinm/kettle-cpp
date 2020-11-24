@@ -14,3 +14,6 @@ add_and_link_and_test(has_checks_int)
 add_and_link_and_test(has_checks_int_ptr)
 add_and_link_and_test(has_checks_double)
 add_and_link_and_test(has_checks_nullptr)
+
+add_and_link_and_test(add_binary_plus_from_plus_assign)
+add_and_link_and_test(add_binary_plus_from_minus_ops)
