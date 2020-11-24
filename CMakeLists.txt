@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.13)
 
 project(CRTPI
   VERSION 0.0.1
-  DESCRIPTION "Uses CRTP to redue boilerplate."
+  DESCRIPTION "Uses CRTP to reduce boilerplate."
   LANGUAGES CXX)
+
+option(CRTPI_BUILD_TESTS ON)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
@@ -18,9 +20,16 @@ target_compile_options(${PROJECT_NAME} INTERFACE
 target_link_options(${PROJECT_NAME} INTERFACE
   "$<$<CONFIG:Debug>:-pg;>" "$<$<CONFIG:RelWithDebInfo>:-pg;>")
 
-function(add_and_link FILE LIBS)
+# helper function
+function(add_and_link FILE)
 add_executable(${FILE} ${FILE}.cpp)
-target_link_libraries(${FILE} ${LIBS})
+target_link_libraries(${FILE} ${PROJECT_NAME})
 endfunction()
 
 add_subdirectory(src)
+
+if(CRTPI_BUILD_TESTS)
+  enable_testing()
+  find_package(Catch2 REQUIRED)
+  add_subdirectory(test)
+endif()
