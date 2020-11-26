@@ -2,157 +2,157 @@
 #define __KTL_TEST_ALL_DEFINED__
 
 // A class which has all operators on an int defined
-struct IntImpl {
+struct Int {
   int x;
-  explicit IntImpl(int a) : x{a} {}
+  explicit Int(int a) : x{a} {}
 
-  friend IntImpl &operator+=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator+=(Int &lhs, Int const &rhs) {
     lhs.x += rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator-=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator-=(Int &lhs, Int const &rhs) {
     lhs.x -= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator*=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator*=(Int &lhs, Int const &rhs) {
     lhs.x *= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator/=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator/=(Int &lhs, Int const &rhs) {
     lhs.x /= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator%=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator%=(Int &lhs, Int const &rhs) {
     lhs.x %= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator&=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator&=(Int &lhs, Int const &rhs) {
     lhs.x &= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator|=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator|=(Int &lhs, Int const &rhs) {
     lhs.x |= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator^=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator^=(Int &lhs, Int const &rhs) {
     lhs.x ^= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator<<=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator<<=(Int &lhs, Int const &rhs) {
     lhs.x <<= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator>>=(IntImpl &lhs, IntImpl const &rhs) {
+  friend Int &operator>>=(Int &lhs, Int const &rhs) {
     lhs.x >>= rhs.x;
     return lhs;
   }
 
-  friend IntImpl &operator++(IntImpl &rhs) {
+  friend Int &operator++(Int &rhs) {
     ++rhs.x;
     return rhs;
   }
 
-  friend IntImpl &operator--(IntImpl &rhs) {
+  friend Int &operator--(Int &rhs) {
     --rhs.x;
     return rhs;
   }
 
-  friend IntImpl operator++(IntImpl &rhs, int) {
+  friend Int operator++(Int &rhs, int) {
     rhs.x++;
     return rhs;
   }
 
-  friend IntImpl operator--(IntImpl &rhs, int) {
+  friend Int operator--(Int &rhs, int) {
     rhs.x--;
     return rhs;
   }
 
-  friend IntImpl operator+(IntImpl const &rhs) { return IntImpl{+rhs.x}; }
+  friend Int operator+(Int const &rhs) { return Int{+rhs.x}; }
 
-  friend IntImpl operator-(IntImpl const &rhs) { return IntImpl{-rhs.x}; }
+  friend Int operator-(Int const &rhs) { return Int{-rhs.x}; }
 
-  friend IntImpl operator~(IntImpl const &rhs) { return IntImpl{~rhs.x}; }
+  friend Int operator~(Int const &rhs) { return Int{~rhs.x}; }
 
-  friend IntImpl operator+(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x + rhs.x};
+  friend Int operator+(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x + rhs.x};
   }
 
-  friend IntImpl operator-(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x - rhs.x};
+  friend Int operator-(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x - rhs.x};
   }
 
-  friend IntImpl operator*(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x * rhs.x};
+  friend Int operator*(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x * rhs.x};
   }
 
-  friend IntImpl operator/(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x / rhs.x};
+  friend Int operator/(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x / rhs.x};
   }
 
-  friend IntImpl operator%(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x % rhs.x};
+  friend Int operator%(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x % rhs.x};
   }
 
-  friend IntImpl operator&(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x & rhs.x};
+  friend Int operator&(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x & rhs.x};
   }
 
-  friend IntImpl operator|(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x | rhs.x};
+  friend Int operator|(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x | rhs.x};
   }
 
-  friend IntImpl operator^(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x ^ rhs.x};
+  friend Int operator^(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x ^ rhs.x};
   }
 
-  friend IntImpl operator<<(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x << rhs.x};
+  friend Int operator<<(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x << rhs.x};
   }
 
-  friend IntImpl operator>>(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x >> rhs.x};
+  friend Int operator>>(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x >> rhs.x};
   }
 
-  friend bool operator!(IntImpl const &rhs) { return !rhs.x; }
+  friend bool operator!(Int const &rhs) { return !rhs.x; }
 
-  friend bool operator&&(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator&&(Int const &lhs, Int const &rhs) {
     return lhs.x && rhs.x;
   }
 
-  friend bool operator||(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator||(Int const &lhs, Int const &rhs) {
     return lhs.x || rhs.x;
   }
 
-  friend bool operator==(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator==(Int const &lhs, Int const &rhs) {
     return lhs.x == rhs.x;
   }
 
-  friend bool operator!=(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator!=(Int const &lhs, Int const &rhs) {
     return lhs.x != rhs.x;
   }
 
-  friend bool operator<(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator<(Int const &lhs, Int const &rhs) {
     return lhs.x < rhs.x;
   }
 
-  friend bool operator<=(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator<=(Int const &lhs, Int const &rhs) {
     return lhs.x <= rhs.x;
   }
 
-  friend bool operator>(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator>(Int const &lhs, Int const &rhs) {
     return lhs.x > rhs.x;
   }
 
-  friend bool operator>=(IntImpl const &lhs, IntImpl const &rhs) {
+  friend bool operator>=(Int const &lhs, Int const &rhs) {
     return lhs.x >= rhs.x;
   }
 };

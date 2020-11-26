@@ -1,9 +1,11 @@
 # define helper
 function(add_and_link_and_test FILE GROUP)
-  add_executable(${FILE} ${FILE}.cpp)
-  target_link_libraries(${FILE} ${PROJECT_NAME} catch)
-  add_test(${FILE} ${FILE})
-  set_tests_properties(${FILE} PROPERTIES LABELS ${GROUP})
+  set(EX ${FILE}_${GROUP})
+  add_executable(${EX} ${FILE}.cpp)
+  target_link_libraries(${EX} ${PROJECT_NAME} catch)
+  add_test(${EX} ${EX})
+  set_tests_properties(${EX} PROPERTIES LABELS ${GROUP})
+  unset(EX)
 endfunction()
 
 # setup Catch2
@@ -15,4 +17,5 @@ add_custom_target(the_tests)
 add_subdirectory(traits)
 add_subdirectory(binary_plus)
 add_subdirectory(minus_assign)
+add_subdirectory(plus_assign)
 
