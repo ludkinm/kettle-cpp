@@ -28,6 +28,6 @@ endfunction()
 
 if(KETTLE_BUILD_TESTS)
   enable_testing()
-  find_package(Catch2 REQUIRED)
+  add_subdirectory(lib/Catch2)
   add_subdirectory(test)
 endif()
