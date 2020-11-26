@@ -8,7 +8,7 @@ endfunction()
 
 # setup Catch2
 add_library(the_tests catch.cpp)
-target_link_libraries(the_tests Catch2::Catch2)
+target_link_libraries(the_tests PUBLIC Catch2::Catch2)
 
 # add subdirs
 add_subdirectory(traits)
