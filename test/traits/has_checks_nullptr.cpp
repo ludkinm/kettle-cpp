@@ -4,13 +4,13 @@
 TEST_CASE("std::nullptr_t", "[has_checks]") {
   REQUIRE(ktl::has_equals_v<std::nullptr_t>);
   REQUIRE(ktl::has_not_equals_v<std::nullptr_t>);
-  REQUIRE(ktl::has_unary_logical_not_v<std::nullptr_t>);
+  REQUIRE(!ktl::has_unary_logical_not_v<std::nullptr_t>);
   REQUIRE(ktl::has_unary_logical_and_v<std::nullptr_t>);
   REQUIRE(ktl::has_unary_logical_or_v<std::nullptr_t>);
-  REQUIRE(!ktl::has_less_than_v<std::nullptr_t>);
-  REQUIRE(!ktl::has_less_than_equals_v<std::nullptr_t>);
-  REQUIRE(!ktl::has_more_than_v<std::nullptr_t>);
-  REQUIRE(!ktl::has_more_than_equals_v<std::nullptr_t>);
+  REQUIRE(ktl::has_less_than_v<std::nullptr_t>);
+  REQUIRE(ktl::has_less_than_equals_v<std::nullptr_t>);
+  REQUIRE(ktl::has_more_than_v<std::nullptr_t>);
+  REQUIRE(ktl::has_more_than_equals_v<std::nullptr_t>);
   REQUIRE(!ktl::has_plus_assign_v<std::nullptr_t>);
   REQUIRE(!ktl::has_minus_assign_v<std::nullptr_t>);
   REQUIRE(!ktl::has_mult_assign_v<std::nullptr_t>);
