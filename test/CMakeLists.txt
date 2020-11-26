@@ -2,7 +2,7 @@
 function(add_and_link_and_test FILE GROUP)
   set(EX ${FILE}_${GROUP})
   add_executable(${EX} ${FILE}.cpp)
-  target_link_libraries(${EX} ${PROJECT_NAME} catch)
+  target_link_libraries(${EX} ${PROJECT_NAME} the_tests)
   add_test(${EX} ${EX})
   set_tests_properties(${EX} PROPERTIES LABELS ${GROUP})
   unset(EX)
