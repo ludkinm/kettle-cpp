@@ -5,16 +5,27 @@
 
 namespace ktl {
 
-template <class, class = void> struct plus_assign {};
+namespace {
+template <class T> inline constexpr bool option0 = has_plus_assign_v<T>;
 
-template <class T> struct plus_assign<T, enable_if_t<has_plus_assign_v<T>>> {};
+template <class T> inline constexpr bool option1 = has_binary_plus_v<T>;
 
-template <class T> struct plus_assign<T, enable_if_t<has_binary_plus_v<T>>> {
-  friend T &operator+=(T &lhs, T const &rhs) {
-    lhs = lhs + rhs;
-    return lhs;
-  }
-};
+template <class T>
+inline constexpr bool option2 =
+    !option1<T> && has_minus_assign_v<T> && has_unary_minus_v<T>;
+} // namespace
+
+template <class T>
+enable_if_t<option1<T>, T &> operator+=(T &lhs, T const &rhs) {
+  lhs = lhs + rhs;
+  return lhs;
+}
+
+template <class T>
+enable_if_t<option2<T>, T &> operator+=(T &lhs, T const &rhs) {
+  lhs -= (-rhs);
+  return lhs;
+}
 
 } // namespace ktl
 #endif

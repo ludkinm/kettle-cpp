@@ -3,10 +3,6 @@
 #include <kettle++/ops/minus_assign.hpp>
 #include <kettle++/traits/trait_maker.hpp>
 
-struct Int : IntImpl, protected ktl::minus_assign<IntImpl> {
-  using IntImpl::IntImpl;
-};
-
 TEST_CASE("from binary plus", "[binary_plus]") {
   Int i{1};
   Int j{2};

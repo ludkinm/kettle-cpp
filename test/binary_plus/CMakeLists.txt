@@ -1,4 +1,6 @@
+add_and_link_and_test(all_defined binary_plus)
+
 add_and_link_and_test(from_binary_plus binary_plus)
 add_and_link_and_test(from_plus_assign binary_plus)
 add_and_link_and_test(from_minus_ops   binary_plus)
-add_and_link_and_test(all_defined_bp   binary_plus)
+

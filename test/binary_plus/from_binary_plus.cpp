@@ -2,17 +2,15 @@
 #include <kettle++/ops/binary_plus.hpp>
 #include <kettle++/traits/trait_maker.hpp>
 
-struct IntImpl {
+using ktl::operator+;
+
+struct Int {
   int x;
-  explicit IntImpl(int a) : x{a} {}
+  explicit Int(int a) : x{a} {}
 
-  friend IntImpl operator+(IntImpl const &lhs, IntImpl const &rhs) {
-    return IntImpl{lhs.x + rhs.x};
+  friend Int operator+(Int const &lhs, Int const &rhs) {
+    return Int{lhs.x + rhs.x};
   }
-};
-
-struct Int : IntImpl, protected ktl::binary_plus<IntImpl> {
-  using IntImpl::IntImpl;
 };
 
 TEST_CASE("from binary plus", "[binary_plus]") {

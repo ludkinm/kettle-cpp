@@ -1,8 +1,8 @@
 #include "../catch.hpp"
-#include <kettle++/ops/binary_plus.hpp>
+#include <kettle++/ops/plus_assign.hpp>
 #include <kettle++/traits/trait_maker.hpp>
 
-using ktl::operator+;
+using ktl::operator+=;
 
 struct Int {
   int x;
@@ -14,15 +14,14 @@ struct Int {
   }
 };
 
-TEST_CASE("from plus assign", "[binary_plus]") {
+TEST_CASE("from plus_assign", "[plus_assign]") {
   Int i{1};
   Int j{2};
 
   REQUIRE(i.x == 1);
   REQUIRE(j.x == 2);
-  i += j;
-  REQUIRE(i.x == 3);
-  REQUIRE(j.x == 2);
 
-  REQUIRE((i + j).x == 5);
+  i += j;
+
+  REQUIRE(i.x == 3);
 }

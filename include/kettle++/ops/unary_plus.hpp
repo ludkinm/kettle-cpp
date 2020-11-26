@@ -11,11 +11,10 @@ namespace ktl {
  * Else, implement as returning a copy
  */
 
-template <class, class = void> struct unary_plus {};
-
-template <class T> struct unary_plus<T, enable_if_t<!has_unary_plus_v<T>>> {
-  friend T operator+(T const &lhs) { return lhs; }
-};
+template <class T>
+enable_if_t<!has_unary_plus_v<T>, T> operator+(T const &lhs) {
+  return lhs;
+}
 
 } // namespace ktl
 #endif

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(KETTLE
-  VERSION 0.0.1
-  DESCRIPTION "Uses CRTP to reduce boilerplate."
+  VERSION 0.0.2
+  DESCRIPTION "Uses SFINAE and enable_if_t to reduce boilerplate."
   LANGUAGES CXX)
 
 option(KETTLE_BUILD_TESTS "ON if tests should be built" ON)
