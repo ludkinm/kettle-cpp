@@ -1,5 +1,7 @@
 # Kettle++
 
+https://img.shields.io/github/workflow/status/ludkinm/kettle-cpp/CMake
+
 Reduce boilerplate code of `operator`s in `C++` using `SFINAE` and `enable_if`.
 
 ## Example
