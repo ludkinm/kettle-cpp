@@ -9,9 +9,8 @@ function(add_and_link_and_test FILE GROUP)
 endfunction()
 
 # setup Catch2
-add_library(catch catch.cpp)
-target_link_libraries(catch PUBLIC Catch2::Catch2)
-add_custom_target(the_tests)
+add_library(the_tests catch.cpp)
+target_link_libraries(the_tests PUBLIC Catch2::Catch2)
 
 # add subdirs
 add_subdirectory(traits)
