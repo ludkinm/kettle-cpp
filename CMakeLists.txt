@@ -19,5 +19,6 @@ target_compile_features(${PROJECT_NAME} INTERFACE
 if(KETTLE_BUILD_TESTS)
   enable_testing()
   add_subdirectory(lib/Catch2)
+  set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/lib/Catch2/contrib" ${CMAKE_MODULE_PATH})
   add_subdirectory(test)
 endif()
